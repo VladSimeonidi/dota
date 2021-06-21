@@ -1,0 +1,603 @@
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background-color: #090d15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  max-width: 1216px;
+  width: 100%;
+}
+
+.header {
+  max-width: 1216px;
+  width: 100%;
+  min-height: 70px;
+  -webkit-filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.25));
+          filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.25));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #090d15;
+  position: fixed;
+  z-index: 100;
+}
+
+.logo {
+  text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+  font-family: "Gilroy", sans-serif;
+  position: relative;
+  padding: 4px 10px 4.6px 10px;
+  width: 119px;
+  margin-right: auto;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 4px;
+  padding: 1px;
+  background: linear-gradient(45deg, #19d233, #7f00ff);
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.menu {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 695px;
+  width: 100%;
+}
+
+.menu__item {
+  list-style-type: none;
+}
+
+.menu__link {
+  color: #fff;
+  font-family: "Museo Sans Cyrl 700", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.menu__link:hover {
+  color: grey;
+}
+
+.dropdown {
+  cursor: pointer;
+  margin-left: 36px;
+  width: 102px;
+  padding-top: 13px;
+  padding-bottom: 10px;
+  padding-left: 46px;
+  padding-right: 35px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  background: #191d2d;
+  border-radius: 4px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  color: black;
+  background-color: #f9f9f9;
+  min-width: 100px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown-content__lang:hover {
+  background-color: grey;
+}
+
+.lang {
+  position: relative;
+  font-size: 14px;
+  line-height: 17px;
+  font-family: "Museo Sans Cyrl 500", sans-serif;
+  color: #fff;
+  font-weight: 700;
+}
+
+.lang::before {
+  content: "";
+  background-image: url("../images/flags/RU.png");
+  width: 22.4px;
+  height: 16px;
+  top: -1px;
+  left: -30px;
+  position: absolute;
+}
+
+.lang::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  top: 4px;
+  right: -19px;
+  background-image: url("../images/icon.png");
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.preHeader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  min-height: 598px;
+  background-image: url("../images/Group 1 copy 1@2x.png"), url("../images/background 1.png");
+  background-size: 831px 712px, auto;
+  background-position: right top, top center;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.preHeader__title {
+  font-family: "Museo Sans Cyrl 900", sans-serif;
+  color: #fff;
+  font-weight: 900;
+  max-width: 488px;
+  width: 100%;
+  font-size: 48px;
+  line-height: 58px;
+  text-transform: uppercase;
+}
+
+.preHeader__button {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  border: 0;
+  cursor: pointer;
+  font-family: "Museo Sans Cyrl 500";
+  background: #6e00dc;
+  border-radius: 60px;
+  color: #fff;
+  padding: 21px 33px 21px 32px;
+  margin-bottom: 122px;
+  margin-top: 35px;
+}
+
+.preHeader__button::after {
+  content: "\27F6";
+  margin-left: 28px;
+}
+
+.image {
+  position: absolute;
+  width: 831px;
+  height: 717px;
+  left: 561px;
+  top: -8px;
+}
+
+.offer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 690px;
+  width: 100%;
+}
+
+.offer .sell-skin {
+  position: relative;
+  background-image: url("../images/offer1.png");
+  background-position: -175px -53px;
+  background-repeat: no-repeat;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 50%;
+}
+
+.offer .sell-skin__image {
+  position: absolute;
+  top: 55px;
+  right: -110px;
+  -webkit-animation: 4s ease-out 2s infinite breathing;
+          animation: 4s ease-out 2s infinite breathing;
+}
+
+.offer .sell-skin__arrow1 {
+  margin-left: 236px;
+}
+
+.offer .sell-skin__title {
+  font-family: "Museo Sans Cyrl 700", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  max-width: 306px;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  margin-bottom: 92px;
+  margin-left: 91px;
+  margin-top: 24px;
+}
+
+.offer .get-cash {
+  position: relative;
+  background-image: url("../images/offer2.png");
+  background-position: -55px -53px;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 50%;
+}
+
+.offer .get-cash__arrow2 {
+  margin: 0 auto;
+  padding-left: 120px;
+}
+
+.offer .get-cash__title {
+  font-family: "Museo Sans Cyrl 700", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  max-width: 402px;
+  text-align: center;
+  margin-top: 24px;
+  margin-bottom: 92px;
+  font-size: 24px;
+  margin-left: auto;
+  margin-right: 43px;
+  line-height: 29px;
+}
+
+.offer .get-cash__image {
+  position: absolute;
+  bottom: 95px;
+  left: -158px;
+  -webkit-animation: 4s ease-out 0s infinite breathing;
+          animation: 4s ease-out 0s infinite breathing;
+}
+
+@-webkit-keyframes breathing {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+@keyframes breathing {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+}
+
+.faq {
+  min-height: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.faq_margin {
+  margin-top: 121px;
+}
+
+.faq__menu {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  max-width: 488px;
+  width: 100%;
+}
+
+.faq__item {
+  padding: 25px;
+  font-family: "Museo Sans Cyrl 500", sans-serif;
+  color: #fff;
+  font-weight: normal;
+}
+
+.faq__item_with-border {
+  cursor: pointer;
+  position: relative;
+  font-family: "Museo Sans Cyrl 900", sans-serif;
+  color: #fff;
+  font-weight: 900;
+}
+
+.faq__item_with-border::after {
+  position: absolute;
+  content: "";
+  background-image: url("../images/chevron-bottom.svg");
+  top: 25px;
+  right: 24px;
+  width: 16px;
+  height: 16px;
+}
+
+.faq__item_with-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 7px;
+  padding: 1px;
+  background: linear-gradient(45deg, #19d233, #7f00ff);
+  -webkit-mask: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff)) content-box, -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.faq__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.detailes {
+  max-width: 624px;
+  width: 100%;
+}
+
+.detailes__title {
+  padding-top: 10px;
+  font-family: "Museo Sans Cyrl 700", sans-serif;
+  color: #fff;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 26px;
+}
+
+.detailes__text {
+  font-family: "Museo Sans Cyrl 500", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  margin-top: 24px;
+}
+
+.cta {
+  min-height: 305px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  background-image: url("../images/background-cta.png");
+  background-position: 0 -15px;
+}
+
+.cta_margin {
+  margin-top: 26px;
+  margin-bottom: 68px;
+}
+
+.cta__button {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 18px;
+  border: 0;
+  cursor: pointer;
+  font-family: "Museo Sans Cyrl 500";
+  background: #6e00dc;
+  border-radius: 60px;
+  color: #fff;
+  margin-bottom: 80px;
+  margin-left: 72px;
+  padding: 27px 52px 25px 50px;
+}
+
+.cta__button::after {
+  content: "\27F6";
+  margin-left: 28px;
+}
+
+.footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 55px;
+}
+
+.footer__list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-top: -23px;
+}
+
+.footer__list_margin-left_15 {
+  margin-left: -15px;
+}
+
+.footer__list_margin-left_50 {
+  margin-left: 50px;
+}
+
+.footer__list_margin-right_15 {
+  margin-right: 15px;
+}
+
+.footer__items {
+  margin-top: 23px;
+}
+
+.footer__link {
+  font-family: "Museo Sans Cyrl 500", sans-serif;
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+}
+
+.footer_margin {
+  padding-bottom: 69px;
+}
+
+.footer_padding {
+  padding-right: 50px;
+}
+
+.contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.contacts__copyright {
+  font-size: 13px;
+  line-height: 16px;
+  font-family: "Museo Sans Cyrl 500";
+  font-weight: 500;
+  color: #1b2335;
+  max-width: 280px;
+  width: 100%;
+  margin-top: 24.5px;
+  margin-bottom: auto;
+}
+
+.contacts__menu {
+  padding: 0;
+  margin: 0;
+  margin-left: -3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+.contacts__item {
+  background-color: #262c35;
+  height: 24px;
+  width: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 3px;
+}
+/*# sourceMappingURL=styles.css.map */

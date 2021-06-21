@@ -1,0 +1,423 @@
+$base-color: #fff;
+$button-color: #6e00dc;
+@mixin header($font-family, $font-weight) {
+    font-family: $font-family, sans-serif;
+    color: $base-color;
+    font-weight: $font-weight;
+}
+@mixin gradient-border-green-purple($border-radius, $padding) {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: $border-radius;
+    padding: $padding;
+    background: linear-gradient(45deg, #19d233, #7f00ff);
+    -webkit-mask: linear-gradient($base-color 0 0) content-box, linear-gradient($base-color 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+}
+@mixin MyButton($background, $color) {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 18px;
+    border: 0;
+    cursor: pointer;
+    font-family: "Museo Sans Cyrl 500";
+    background: $background;
+    border-radius: 60px;
+    color: $color;
+}
+html {
+    box-sizing: border-box;
+}
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+body {
+    background-color: #090d15;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    max-width: 1216px;
+    width: 100%;
+}
+.header {
+    max-width: 1216px;
+    width: 100%;
+    min-height: 70px;
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.25));
+    display: flex;
+    align-items: center;
+    background-color: #090d15;
+    position: fixed;
+    z-index: 100;
+}
+.logo {
+    text-transform: uppercase;
+    color: $base-color;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 22px;
+    font-family: "Gilroy", sans-serif;
+    position: relative;
+    padding: 4px 10px 4.6px 10px;
+    width: 119px;
+    margin-right: auto;
+}
+.logo::before {
+    @include gradient-border-green-purple(4px, 1px);
+}
+.menu {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    max-width: 695px;
+    width: 100%;
+    &__item {
+        list-style-type: none;
+    }
+    &__link {
+        color: $base-color;
+        font-family: "Museo Sans Cyrl 700", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+    &__link:hover {
+        color: grey;
+    }
+}
+.dropdown {
+    cursor: pointer;
+    margin-left: 36px;
+    width: 102px;
+    padding-top: 13px;
+    padding-bottom: 10px;
+    padding-left: 46px;
+    padding-right: 35px;
+    color: $base-color;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    background: #191d2d;
+    border-radius: 4px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    color: black;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    &__lang:hover {
+        background-color: grey;
+    }
+}
+.lang {
+    position: relative;
+    font-size: 14px;
+    line-height: 17px;
+    @include header("Museo Sans Cyrl 500", 700);
+}
+.lang::before {
+    content: "";
+    background-image: url("../images/flags/RU.png");
+    width: 22.4px;
+    height: 16px;
+    top: -1px;
+    left: -30px;
+    position: absolute;
+}
+.lang::after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    top: 4px;
+    right: -19px;
+    background-image: url("../images/icon.png");
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.preHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    min-height: 598px;
+    background-image: url("../images/Group\ 1\ copy\ 1@2x.png"), url("../images/background\ 1.png");
+    background-size: 831px 712px, auto;
+    background-position: right top, top center;
+    background-repeat: no-repeat, no-repeat;
+    &__title {
+        @include header("Museo Sans Cyrl 900", 900);
+        max-width: 488px;
+        width: 100%;
+        font-size: 48px;
+        line-height: 58px;
+        text-transform: uppercase;
+    }
+    &__button {
+        @include MyButton($button-color, $base-color);
+        padding: 21px 33px 21px 32px;
+        margin-bottom: 122px;
+        margin-top: 35px;
+    }
+    &__button::after {
+        content: "\27F6";
+        margin-left: 28px;
+    }
+}
+.image {
+    position: absolute;
+    width: 831px;
+    height: 717px;
+    left: 561px;
+    top: -8px;
+}
+.offer {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 690px;
+    width: 100%;
+    .sell-skin {
+        position: relative;
+        background-image: url("../images/offer1.png");
+        background-position: -175px -53px;
+        background-repeat: no-repeat;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 50%;
+        &__image {
+            position: absolute;
+            top: 55px;
+            right: -110px;
+            animation: 4s ease-out 2s infinite breathing;
+        }
+        &__arrow1 {
+            margin-left: 236px;
+        }
+        &__title {
+            @include header("Museo Sans Cyrl 700", 700);
+            max-width: 306px;
+            font-size: 24px;
+            line-height: 29px;
+            text-align: center;
+            margin-bottom: 92px;
+            margin-left: 91px;
+            margin-top: 24px;
+        }
+    }
+    .get-cash {
+        position: relative;
+        background-image: url("../images/offer2.png");
+        background-position: -55px -53px;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        flex-grow: 1;
+        width: 50%;
+        &__arrow2 {
+            margin: 0 auto;
+            padding-left: 120px;
+        }
+        &__title {
+            @include header("Museo Sans Cyrl 700", 700);
+            max-width: 402px;
+            text-align: center;
+            margin-top: 24px;
+            margin-bottom: 92px;
+            font-size: 24px;
+            margin-left: auto;
+            margin-right: 43px;
+            line-height: 29px;
+        }
+        &__image {
+            position: absolute;
+            bottom: 95px;
+            left: -158px;
+            animation: 4s ease-out 0s infinite breathing;
+        }
+    }
+    @keyframes breathing {
+        0%,
+        100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+}
+
+// frequently asked questions
+
+.faq {
+    min-height: 280px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &_margin {
+        margin-top: 121px;
+    }
+    &__menu {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+        max-width: 488px;
+        width: 100%;
+    }
+    &__item {
+        padding: 25px;
+        @include header("Museo Sans Cyrl 500", normal);
+        &_with-border {
+            cursor: pointer;
+            position: relative;
+            @include header("Museo Sans Cyrl 900", 900);
+        }
+        &_with-border::after {
+            position: absolute;
+            content: "";
+            background-image: url("../images/chevron-bottom.svg");
+            top: 25px;
+            right: 24px;
+            width: 16px;
+            height: 16px;
+        }
+        &_with-border::before {
+            @include gradient-border-green-purple(7px, 1px);
+        }
+    }
+    &__link {
+        text-decoration: none;
+        color: $base-color;
+        font-size: 16px;
+        line-height: 19px;
+    }
+}
+.detailes {
+    max-width: 624px;
+    width: 100%;
+    &__title {
+        padding-top: 10px;
+        @include header("Museo Sans Cyrl 700", 700);
+        font-size: 24px;
+        line-height: 26px;
+    }
+    &__text {
+        @include header("Museo Sans Cyrl 500", 500);
+        font-size: 16px;
+        line-height: 26px;
+        margin-top: 24px;
+    }
+}
+.cta {
+    min-height: 305px;
+    display: flex;
+    align-items: flex-end;
+    background-image: url("../images/background-cta.png");
+    background-position: 0 -15px;
+    &_margin {
+        margin-top: 26px;
+        margin-bottom: 68px;
+    }
+    &__button {
+        @include MyButton($button-color, $base-color);
+        margin-bottom: 80px;
+        margin-left: 72px;
+        padding: 27px 52px 25px 50px;
+    }
+    &__button::after {
+        content: "\27F6";
+        margin-left: 28px;
+    }
+}
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 55px;
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        margin-top: -23px;
+        &_margin-left_15 {
+            margin-left: -15px;
+        }
+        &_margin-left_50 {
+            margin-left: 50px;
+        }
+        &_margin-right_15 {
+            margin-right: 15px;
+        }
+    }
+    &__items {
+        margin-top: 23px;
+    }
+    &__link {
+        @include header("Museo Sans Cyrl 500", 500) font-size: 14px;
+        line-height: 17px;
+        text-decoration: none;
+    }
+    &_margin {
+        padding-bottom: 69px;
+    }
+    &_padding {
+        padding-right: 50px;
+    }
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &__copyright {
+        font-size: 13px;
+        line-height: 16px;
+        font-family: "Museo Sans Cyrl 500";
+        font-weight: 500;
+        color: #1b2335;
+        max-width: 280px;
+        width: 100%;
+        margin-top: 24.5px;
+        margin-bottom: auto;
+    }
+    &__menu {
+        padding: 0;
+        margin: 0;
+        margin-left: -3px;
+        display: flex;
+        list-style-type: none;
+    }
+    &__item {
+        background-color: #262c35;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3px;
+    }
+}
